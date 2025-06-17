@@ -118,13 +118,15 @@ llmcommit --preset standard -a -p
 
 ### Supported Models
 
-| Model | Size | Speed | Use Case |
-|-------|------|-------|----------|
-| **SmolLM-135M** | 135M | ⚡⚡ Ultra-fast | 🏆 2024's lightest |
-| **TinyLlama-1.1B** | 1.1B | ⚡ Fastest LLM | 🎯 High-performance light |
-| distilgpt2 | 82M | 🚀 Fast | Basic usage |
-| DialoGPT-small | 117M | 🌟 Medium | Dialog-optimized |
-| gpt2 | 124M | 🌠 Medium | Standard quality |
+| Model | File Size | Speed | Use Case |
+|-------|-----------|-------|----------|
+| **distilgpt2** | **85MB** | 🚀 Fast | Basic usage |
+| **DialoGPT-small** | **234MB** | 🌟 Medium | Dialog-optimized |
+| **gpt2** | **240MB** | 🌠 Medium | Standard quality |
+| **SmolLM-135M** | **269MB** | ⚡⚡ Ultra-fast | 🏆 2024's lightest |
+| **TinyLlama-1.1B** | **637MB** | ⚡ Fastest LLM | 🎯 High-performance light |
+| **Gemma-2B** | **1.17GB** | 🌟 Medium | 🌏 Multilingual support |
+| **PLaMo-2-1B** | **5.2GB** | 🌸 Medium | 🇯🇵 Japanese specialized |
 
 ## Configuration
 
