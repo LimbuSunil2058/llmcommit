@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llmcommit"
+version = "0.0.1"
+description = "AI-powered Git commit message generator with ultra-fast performance"
+readme = "README.md"
+authors = [{name = "0xkaz", email = "kaz@example.com"}]
+license = {text = "MIT"}
+keywords = ["git", "commit", "ai", "llm", "automation", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Version Control :: Git",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "accelerate>=0.20.0",
+    "sentencepiece>=0.1.99",
+]
+
+[project.scripts]
+llmcommit = "llmcommit.main:main"
+llmcommit-cache = "llmcommit.cache_cli:main"
+
+[project.urls]
+Homepage = "https://github.com/0xkaz/llmcommit"
+Repository = "https://github.com/0xkaz/llmcommit.git"
+Issues = "https://github.com/0xkaz/llmcommit/issues"
+Documentation = "https://github.com/0xkaz/llmcommit#readme"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+    "isort>=5.10.0",
+]
+onnx = [
+    "optimum[onnxruntime]>=1.8.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

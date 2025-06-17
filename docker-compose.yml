@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  llmcommit:
+    build: .
+    volumes:
+      # Mount git repository
+      - .:/workspace
+      # Persistent cache for Hugging Face models
+      - huggingface_cache:/root/.cache/huggingface
+      # Persistent cache for pip
+      - pip_cache:/root/.cache/pip
+      # Persistent cache for PyTorch
+      - pytorch_cache:/root/.cache/torch
+      # Persistent cache for llmcommit outputs and model states
+      - llmcommit_cache:/root/.cache/llmcommit
+    working_dir: /workspace
+    environment:
+      - TRANSFORMERS_CACHE=/root/.cache/huggingface
+      - HF_HOME=/root/.cache/huggingface
+    stdin_open: true
+    tty: true
+
+volumes:
+  huggingface_cache:
+    driver: local
+  pip_cache:
+    driver: local
+  pytorch_cache:
+    driver: local
+  llmcommit_cache:
+    driver: local

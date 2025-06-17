@@ -1,0 +1,9 @@
+{
+  "model": "distilgpt2",
+  "max_tokens": 10,
+  "temperature": 0.1,
+  "prompt_template": "git commit -m \"{diff}\"\n\nGenerate a concise commit message:",
+  "cache_dir": "/tmp/llmcommit_cache",
+  "use_onnx": false,
+  "use_fast": true
+}
