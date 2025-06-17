@@ -1,5 +1,27 @@
 # LLMCommit
 
+<div align="center">
+
+**AIで2.5秒でGitコミットメッセージを生成**
+
+</div>
+
+<div align="center">
+
+```bash
+$ llmcommit -a -p
+✅ Update user authentication middleware
+🚀 Committed and pushed in 2.5s
+```
+
+| ⚡ **2.5秒** | 🤖 **AI搭載** | 🔒 **オフライン** |
+|:-----------:|:--------------:|:----------------:|
+| 超高速 | スマートメッセージ | プライバシー優先 |
+
+</div>
+
+---
+
 LLMを使用してgitコミットメッセージを自動生成する高速CLIツール。
 git add、commit、pushまでを一つのコマンドで実行可能。
 
