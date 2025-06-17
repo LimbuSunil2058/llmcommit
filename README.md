@@ -1,5 +1,10 @@
 # LLMCommit
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![GitHub release](https://img.shields.io/github/release/0xkaz/llmcommit.svg)](https://github.com/0xkaz/llmcommit/releases)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)](https://hub.docker.com/)
+
 AI-powered Git commit message generator with ultra-fast performance.
 Generate, commit, and push with a single command.
 
